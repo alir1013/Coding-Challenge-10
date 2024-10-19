@@ -34,3 +34,19 @@ const sizeDropdown = document.getElementById('product-size');
 sizeDropdown.addEventListener('change', updateProductDetails); //adds to size dropdown
 
 updateProductDetails();
+
+  //Task 4: Create A Checkout Event
+ 
+  const sizesDropdown = document.getElementById("product-size");
+  const checkoutButton = document.getElementById("add-to-cart");    
+  
+  checkoutButton.addEventListener('click', () => {
+const selectedSize = sizesDropdown.options[sizesDropdown.selectedIndex];
+const stock = sizesDropdown.options[sizesDropdown.selectedIndex].getAttribute('data-stock');  //Checks stock 
+  
+    if (stock > 0) {
+      alert(`Item has been added`); //alert message
+    } else {
+      alert(`${selectedSize} is out of stock`);  //alert message
+    }
+  });
