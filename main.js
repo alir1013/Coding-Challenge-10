@@ -10,14 +10,14 @@ productSize.addEventListener("change",(event) => {
 //Task 3:Handle Stock Availability 
 
 function updateProductDetails() {
-    const priceDisplay = document.getElementById('product-price');
-    const sizeDropdown = document.getElementById('product-size');
-    const stockStatus = document.getElementById('stock-status');
-    const addToCartButton = document.getElementById('add-to-cart');
+    const priceDisplay = document.getElementById("product-price");
+    const sizeDropdown = document.getElementById("product-size");
+    const stockStatus = document.getElementById("stock-status");
+    const addToCartButton = document.getElementById("add-to-cart");
 
     const selectedSize= sizeDropdown.options[sizeDropdown.selectedIndex];
     const price = selectedSize.value;
-    const stock = selectedSize.getAttribute('data-stock');
+    const stock = selectedSize.getAttribute("data-stock");
 
     priceDisplay.textContent = `$${price}`; // Updates price 
     
@@ -30,8 +30,8 @@ function updateProductDetails() {
     }
 }
 
-const sizeDropdown = document.getElementById('product-size'); 
-sizeDropdown.addEventListener('change', updateProductDetails); //adds to size dropdown
+const sizeDropdown = document.getElementById("product-size"); 
+sizeDropdown.addEventListener("change", updateProductDetails); //adds to size dropdown
 
 updateProductDetails();
 
@@ -40,12 +40,12 @@ updateProductDetails();
   const sizesDropdown = document.getElementById("product-size");
   const checkoutButton = document.getElementById("add-to-cart");    
   
-  checkoutButton.addEventListener('click', () => {
+  checkoutButton.addEventListener("click", () => {
 const selectedSize = sizesDropdown.options[sizesDropdown.selectedIndex];
-const stock = sizesDropdown.options[sizesDropdown.selectedIndex].getAttribute('data-stock');  //Checks stock 
+const stock = sizesDropdown.options[sizesDropdown.selectedIndex].getAttribute("data-stock");  //Checks stock 
   
     if (stock > 0) {
-      alert(`Item has been added`); //alert message
+      alert("Item has been added"); //alert message
     } else {
       alert(`${selectedSize} is out of stock`);  //alert message
     }
